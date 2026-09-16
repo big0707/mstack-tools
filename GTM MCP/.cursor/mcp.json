@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "gtm": {
+      "command": "powershell.exe",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "scripts/bootstrap-mcp.ps1"
+      ]
+    }
+  }
+}

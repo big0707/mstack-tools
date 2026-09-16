@@ -1,0 +1,14 @@
+# 依赖
+node_modules/
+
+# 敏感凭证（含真实 App Secret，切勿提交）
+.env
+.env.local
+.env.*.local
+
+# 系统/编辑器杂项
+.DS_Store
+*.log
+npm-debug.log*
+outputs/
+Weekly Reports/

@@ -1,0 +1,7 @@
+credentials/
+google-ads.yaml
+ads-api-*.json
+.venv/
+__pycache__/
+reports/
+memory/

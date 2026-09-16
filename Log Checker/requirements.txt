@@ -1,0 +1,2 @@
+aliyun-log-python-sdk==0.9.50
+python-dotenv==1.2.3

@@ -1,0 +1,18 @@
+{
+  "task_type": "create_responsive_search_ad",
+  "customer_id": "1234567890",
+  "ad_group_id": "987654321",
+  "status": "PAUSED",
+  "final_urls": ["https://www.example.com"],
+  "path1": "promo",
+  "path2": "signup",
+  "headlines": [
+    {"text": "专业 Google Ads 代运营", "pinned_field": "HEADLINE_1"},
+    {"text": "提升线索质量"},
+    {"text": "今天获取投放方案"}
+  ],
+  "descriptions": [
+    {"text": "用数据优化预算，减少无效点击。"},
+    {"text": "自动化报告和广告文案迭代，让投放更稳定。"}
+  ]
+}

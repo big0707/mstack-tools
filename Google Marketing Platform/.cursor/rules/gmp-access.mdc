@@ -1,0 +1,69 @@
+---
+description: Manage GA, GTM, Search Console, and Google Ads colleague access through the official gmp CLI and public Google APIs.
+globs:
+alwaysApply: true
+---
+
+# GMP access safety rules
+
+Apply these rules when the user asks to add, remove, inspect, or change a person's
+Google Analytics, GTM, Search Console / SC / GSC, AdWords, or Google Ads access,
+including 入职、离职、升职、负责新项目.
+
+1. Use only the local gmp executable, sibling-project CLIs, and official public
+   Google APIs. Never use Browser, Chrome, Playwright, DOM extraction, browser
+   cookies/tokens, or private web endpoints.
+2. Run gmp doctor before promising a write, and gmp catalog when brand or
+   resource IDs are uncertain. Doctor also reports the auxiliary gmp_org
+   surface. Use gmp discover --product gmp-org only for official organization
+   and Analytics account-link reads. Read access never proves manage.users.
+3. Mutations never execute directly. grant, revoke, set-role, onboard, offboard,
+   promote, and mutation task must create an immutable plan_id. Show email,
+   operation, products, roles, resource IDs, blockers, and manual items. After
+   explicit user confirmation, execute exactly:
+   gmp apply PLAN_ID --confirm PLAN_ID.
+4. Raw mutation --execute is forbidden. Plans are bound to the catalog SHA-256;
+   a catalog change invalidates an older plan. Plans are single-use once a
+   remote execution attempt starts. Never replay a failed, partial, or unknown
+   plan; read current state and create a new plan.
+5. grant / onboard / promote only add or raise access; never downgrade.
+   set-role is an exact replacement and requires one product plus one role.
+   revoke affects only named targets. offboard accepts no brand/product scope,
+   uses account-wide GA/GTM revocation, all cataloged Ads customers plus MCC,
+   and all known GSC sites. Account-wide actions can affect resources not listed
+   individually in catalog. Reconcile live GA/GTM account boundaries, GSC sites,
+   and the Ads MCC customer tree before plan creation and again under the apply
+   lock before claim/audit/write. Any read error or two-way catalog drift fails
+   closed without consuming the plan.
+6. GA/GTM/Ads Admin plans require explicit --allow-admin both when planning and
+   applying. GSC Owner is always blocked by this CLI. The flag does not bypass
+   Google authorization or provider limits.
+7. GSC Full/Restricted user ACL has no official public API. Keep each GSC action
+   in the unified plan with method=manual; apply must return manual_required,
+   never success. Do not substitute Site Verification Owner, a users URL, or
+   browser automation as an executed result.
+8. Ads invitations are pending_acceptance until the recipient accepts the
+   email. Do not report them as fully provisioned.
+9. Cross-product execution is not transactional. After apply, run gmp history
+   and report every product/resource as ok, skipped, pending_acceptance,
+   manual_required, blocked, partial, unknown, or error. Top-level ok excludes
+   blocked/partial/unknown/error; complete requires every item to be ok/skipped.
+   Never turn partial or unknown execution into “all successful.”
+   Apply exits 0 only when complete, 2 when follow-up remains, and 1 on failure;
+   callers must also inspect ok, complete, and requires_follow_up.
+10. Reference credentials/resources from ../GA MCP, ../GTM MCP, ../SEO-Agent,
+    and ../Adwords API; never copy or print secrets.
+11. Files under scripts/ and ops/ are historical evidence, not supported
+    execution paths.
+12. The user's 2026-09-02 screenshot is manual evidence that
+    YOUR_GMP_SA@YOUR_GCP_PROJECT.iam.gserviceaccount.com has direct Org Admin, User
+    Admin, and Billing Admin roles in Your Organization. Treat those as real
+    organization roles, but never claim the public API verified them.
+13. The public GMP Admin API v1alpha has no users, memberships, roles, or
+    permissions endpoint. Its current disabled state affects organization and
+    Analytics account-link discovery only; enabling it would not create an
+    organization personnel ACL. Employee changes still use GA/GTM/Ads product
+    APIs, while GSC remains manual_required.
+14. write_candidate/write_unverified is evidence for a guarded product-API
+    attempt, not verified write authority or proof that a change occurred.
+15. Answer in Chinese unless the user asks otherwise.

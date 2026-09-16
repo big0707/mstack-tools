@@ -1,0 +1,67 @@
+# Secrets and local credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.p12
+*.pfx
+*.key
+*service-account*.json
+*ads-api-*.json
+gsc-key.json
+credentials*.json
+oauth-client.json
+token.json
+google-ads.yaml
+config.yaml
+config.local.json
+mcptoken_gitignore.txt
+pass&api.txt
+*password*.txt
+*passwords*.txt
+
+# Runtime / caches / account reports
+.venv/
+node_modules/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.egg-info/
+dist/
+build/
+.data/
+.runtime/
+.query-cache/
+outputs/
+reports/
+work/
+ops/
+tmp/
+data/
+memory/
+coverage/
+.cache/
+.parcel-cache/
+.nyc_output/
+state/
+drafts/
+Weekly Reports/
+operator key/
+GTM admin key/
+Services account KEY/
+
+# Account-specific operational trees
+openclaw/
+Distill/
+Robots.txt/
+**/exchange_token.py
+**/oauth_setup.py
+*aihubmix*
+*payment-metadata*
+Negative Keywords/
+
+# Evidence and local logs
+**/evidence/
+*.log
+Thumbs.db
+.DS_Store

@@ -1,0 +1,15 @@
+{
+  "task_type": "update_responsive_search_ad",
+  "customer_id": "1234567890",
+  "ad_id": "111222333",
+  "final_urls": ["https://www.example.com/new-offer"],
+  "headlines": [
+    {"text": "Google Ads 自动化投放", "pinned_field": "HEADLINE_1"},
+    {"text": "减少无效点击"},
+    {"text": "获取新版投放方案"}
+  ],
+  "descriptions": [
+    {"text": "每日自动汇总成本、转化和 CPA。"},
+    {"text": "支持飞书群报告和 Markdown 留档。"}
+  ]
+}

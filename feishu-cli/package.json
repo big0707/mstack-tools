@@ -1,0 +1,21 @@
+{
+  "name": "feishu-cli",
+  "version": "1.0.0",
+  "description": "飞书 CLI 工具 - 供 AI Agent 调用创建文档并通知用户",
+  "main": "src/index.js",
+  "bin": {
+    "feishu-cli": "./src/cli.js"
+  },
+  "scripts": {
+    "start": "node src/cli.js",
+    "test": "node test-encoding.mjs && node --test test-append-sheet.mjs"
+  },
+  "keywords": ["feishu", "lark", "cli", "api"],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "commander": "^12.1.0",
+    "dotenv": "^16.4.5"
+  }
+}

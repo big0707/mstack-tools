@@ -1,0 +1,10 @@
+[mcp_servers.ga4]
+command = "powershell.exe"
+args = ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "scripts/bootstrap-mcp.ps1"]
+env_vars = ["GA4_PROPERTY_ID", "GOOGLE_APPLICATION_CREDENTIALS"]
+startup_timeout_sec = 180
+tool_timeout_sec = 120
+enabled = true
+required = false
+default_tools_approval_mode = "auto"
+

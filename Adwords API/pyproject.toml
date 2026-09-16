@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "adwords-api-agent"
+version = "0.1.0"
+description = "A Codex-friendly Google Ads API automation CLI with Feishu report delivery."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "google-ads>=28.0.0",
+  "PyYAML>=6.0.1",
+  "rich>=13.7.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.0.0",
+]
+
+[project.scripts]
+adwords-agent = "adwords_agent.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

@@ -1,0 +1,19 @@
+google_ads:
+  yaml_path: google-ads.yaml
+  api_version: v24
+  default_customer_id: "1234567890"
+
+reports:
+  dir: reports
+
+feishu:
+  cli_path: feishu
+  default_chat_id: "oc_xxxxxxxxxxxxxxxxxxxxx"
+  # Adjust this to your actual Feishu CLI syntax.
+  send_command:
+    - "{cli_path}"
+    - "send"
+    - "--chat-id"
+    - "{chat_id}"
+    - "--file"
+    - "{file}"

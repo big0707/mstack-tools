@@ -1,0 +1,169 @@
+# Copy this file and replace every YOUR_* / example ID with your own resources.
+# Do not commit real service-account keys. This shipped catalog uses placeholders.
+
+gmp_organization:
+  resource_name: organizations/YOUR_GMP_ORG_ID
+  display_name: Your Organization
+  declared_roles: [Org Admin, User Admin, Billing Admin]
+  evidence: replace with your own screenshot or note; public API cannot verify organization user roles
+
+ads_mcc:
+  customer_id: "1234567890"
+  name: your-mcc
+
+brands:
+  demo:
+    display_name: Demo
+    aliases: [demoalias, demo, demo]
+    ga:
+      account: accounts/111111111
+      account_name: Example Demo GA4
+      primary: properties/123456789
+      properties:
+        - { id: properties/123456789, name: Example Demo GA4 }
+    gsc:
+      primary: sc-domain:example.com
+      sites:
+        - sc-domain:example.com
+    gtm:
+      containers:
+        - { public_id: GTM-XXXXXXX, name: Example Demo web, account_id: "1111111111", container_id: "22222222", primary: true }
+        - { public_id: GTM-SECOND, name: Example Demo extra, account_id: "1111111111", container_id: "22222230", primary: false }
+    ads:
+      customers:
+        - { id: "2345678901", name: Example Demo Ads, primary: true }
+
+  demotwo:
+    display_name: Demotwo
+    aliases: [demotwo]
+    ga:
+      account: accounts/111111112
+      account_name: Example Demotwo GA4
+      primary: properties/123456780
+      properties:
+        - { id: properties/123456780, name: Example Demotwo GA4 }
+    gsc:
+      primary: sc-domain:example.org
+      sites:
+        - sc-domain:example.org
+    gtm:
+      containers:
+        - { public_id: GTM-YYYYYYY, name: Example Demotwo web, account_id: "1111111111", container_id: "22222223", primary: true }
+    ads:
+      customers:
+        - { id: "2345678902", name: Example Demotwo Ads, primary: true }
+
+  demofour:
+    display_name: Demofour
+    aliases: [demofouralias, demofour, demofour-ai]
+    ga:
+      account: accounts/111111113
+      account_name: Example Demofour GA4
+      primary: properties/123456781
+      properties:
+        - { id: properties/123456781, name: Example Demofour GA4 }
+    gsc:
+      primary: sc-domain:demofour.example.com
+      sites:
+        - sc-domain:demofour.example.com
+    gtm:
+      containers:
+        - { public_id: GTM-ZZZZZZZ, name: Example Demofour web, account_id: "1111111111", container_id: "22222224", primary: true }
+    ads:
+      customers:
+        - { id: "2345678903", name: Example Demofour Ads, primary: true }
+
+  demothree:
+    display_name: Demothree
+    aliases: []
+    ga:
+      account: accounts/111111114
+      account_name: Example Demothree GA4
+      primary: properties/123456782
+      properties:
+        - { id: properties/123456782, name: Example Demothree GA4 }
+    gsc:
+      primary: sc-domain:example.net
+      sites:
+        - sc-domain:example.net
+        - sc-domain:alternate.example.net
+    gtm:
+      containers:
+        - { public_id: GTM-AAAAAAA, name: Example Demothree web, account_id: "1111111111", container_id: "22222225", primary: true }
+    ads:
+      customers: []
+
+  demofive:
+    display_name: Demofive
+    aliases: [demofive]
+    ga:
+      account: accounts/111111115
+      account_name: Example Demofive GA4
+      primary: properties/123456783
+      properties:
+        - { id: properties/123456783, name: Example Demofive GA4 }
+    gsc:
+      primary: ""
+      sites: []
+    gtm:
+      containers:
+        - { public_id: GTM-BBBBBBB, name: Example Demofive web, account_id: "1111111111", container_id: "22222226", primary: true }
+    ads:
+      customers:
+        - { id: "2345678904", name: Example Demofive Ads, primary: true }
+
+  demosix:
+    display_name: Demosix
+    aliases: [demosix]
+    ga:
+      account: accounts/111111116
+      account_name: Example Demosix GA4
+      primary: properties/123456784
+      properties:
+        - { id: properties/123456784, name: Example Demosix GA4 }
+    gsc:
+      primary: https://blog.demosix.example.com/
+      sites:
+        - https://blog.demosix.example.com/
+    gtm:
+      containers:
+        - { public_id: GTM-CCCCCCC, name: Example Demosix web, account_id: "1111111111", container_id: "22222227", primary: true }
+    ads:
+      customers:
+        - { id: "2345678905", name: Example Demosix Ads, primary: true }
+
+  demoseven:
+    display_name: Demoseven
+    aliases: [demoseven]
+    ga:
+      account: accounts/111111117
+      account_name: Example Demoseven GA4
+      primary: properties/123456785
+      properties:
+        - { id: properties/123456785, name: Example Demoseven GA4 }
+    gsc:
+      primary: ""
+      sites: []
+    gtm:
+      containers:
+        - { public_id: GTM-DDDDDDD, name: Example Demoseven web, account_id: "1111111111", container_id: "22222228", primary: true }
+    ads:
+      customers: []
+
+  demoeight:
+    display_name: DEMOEIGHT
+    aliases: [demoeight, demoeight]
+    ga:
+      account: accounts/111111118
+      account_name: Example DEMOEIGHT GA4
+      primary: properties/123456786
+      properties:
+        - { id: properties/123456786, name: Example DEMOEIGHT GA4 }
+    gsc:
+      primary: ""
+      sites: []
+    gtm:
+      containers:
+        - { public_id: GTM-EEEEEEE, name: Example DEMOEIGHT web, account_id: "1111111111", container_id: "22222229", primary: true }
+    ads:
+      customers: []

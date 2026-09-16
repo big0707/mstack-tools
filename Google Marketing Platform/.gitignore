@@ -1,0 +1,17 @@
+.env
+.venv/
+.data/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+dist/
+*.egg-info/
+credentials/
+credentials*.json
+*service-account*.json
+*ads-api-*.json
+oauth-client.json
+token.json
+google-ads*.yaml
+.cursor/skills/verify-gmp-access/evidence/
+ops/

@@ -1,0 +1,13 @@
+.env
+.venv/
+.data/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+dist/
+*.egg-info/
+credentials*.json
+*service-account*.json
+*ads-api-*.json
+credentials/
+Services account KEY/

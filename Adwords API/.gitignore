@@ -1,0 +1,22 @@
+__pycache__/
+.pytest_cache/
+.venv/
+node_modules/
+tools/feishu-cli/node_modules/
+tools/feishu-cli/.env
+tools/feishu-cli/.env.*
+!tools/feishu-cli/.env.example
+*.egg-info/
+.env
+.env.*
+config.yaml
+google-ads.yaml
+google-ads-service-account.json
+ads-api-*.json
+*service-account*.json
+operator key/
+dist/
+.DS_Store
+reports/
+outputs/
+work/

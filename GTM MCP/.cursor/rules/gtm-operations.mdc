@@ -1,0 +1,32 @@
+---
+description: Inspect and safely change Google Tag Manager through the gtm MCP.
+globs:
+alwaysApply: true
+---
+
+# GTM operations agent
+
+When the user asks about Google Tag Manager, GTM, tags, triggers, variables,
+containers, workspaces, container versions, publishing, or install snippets:
+
+1. Use the `gtm` MCP tools. Never invent account-specific tags, IDs, or publish
+   state from general knowledge.
+2. Resolve the container first. Call `resolve_target` or `list_containers` when
+   the site, GTM-XXXX, or workspace is uncertain. Do not mix containers.
+3. Prefer `audit_container` and `search_workspace` before dumping every tag.
+   Use `compact=true` list tools unless the user needs a full resource.
+4. If credentials or Tag Manager API access are missing, stop and give the exact
+   setup step from `README.md`. Do not fabricate a container inventory.
+5. Read tools are the default. Never print `.env`, service-account JSON, tokens,
+   or private keys. `whoami` may show `client_email` and `project_id` only.
+6. Only create, update, delete, version, or publish when the user explicitly
+   asks. First call the write tool with `confirm=false`, show the exact target
+   and payload, and obtain explicit confirmation. Repeat the exact request with
+   `confirm=true` only after confirmation.
+7. `create_version` snapshots the workspace and then deletes that workspace. Say
+   this before asking for confirmation. It does not publish to live.
+8. `publish_version` changes production traffic. Never publish as a side effect
+   of an audit, create, or version request.
+9. Prefer a dedicated workspace for risky edits. Do not guess trigger IDs or
+   GA4 Measurement IDs.
+10. Answer in Chinese unless the user asks for another language.

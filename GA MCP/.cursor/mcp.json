@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "ga4": {
+      "command": "powershell.exe",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "scripts/bootstrap-mcp.ps1"
+      ]
+    }
+  }
+}
+
