@@ -1,5 +1,7 @@
 # Mstack Tools：Agent 导航
 
+给人看的说明：[English](README.md) | [中文](README.zh-CN.md)
+
 本目录是营销工具工作区，不是单个应用。先按任务进入对应项目，再读该项目的 `AGENTS.md`、README 和适用 skill；命令必须在对应项目目录运行。
 
 **每位使用者必须用自己的账号、Service Account、`.env` 和 `catalog.yaml`。** 仓库里只有示例和占位符，没有可用的生产密钥。
